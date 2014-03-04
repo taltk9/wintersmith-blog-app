@@ -31,7 +31,13 @@ Faça o download e copie os arquivos para o diretório criado ou utilize o [git]
 $ git clone https://github.com/taltk9/wintersmith-blog-app.git .
 ```
 
-Depois de concluído estes passos, configure utilizando a documentação do [Wintersmith](https://github.com/jnordberg/).
+Instale as dependências usando [npm](http://npmjs.org/):
+
+```bash
+$ npm install
+```
+
+Depois de concluir estes passos, a configuração pode ser alterada. Para customizar a aplicação utilize a documentação do [Wintersmith](https://github.com/jnordberg/).
 
 Já é possível visualizar a aplicação rodando:
 
@@ -42,6 +48,8 @@ $ wintersmith preview
 ##Referências
 
 Wintersmith - [https://github.com/jnordberg/wintersmith](https://github.com/jnordberg/wintersmith)
+
 Nunjucks - [http://jlongster.github.io/nunjucks/](http://jlongster.github.io/nunjucks/)
+
 wintesmith-nunjucks - [https://github.com/jbuck/wintersmith-nunjucks](https://github.com/jbuck/wintersmith-nunjucks)
 
