@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "moment": "2.3.x",
+    "nunjucks": "~1.0.0",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "wintersmith-browserify": "*",
+    "wintersmith-less": "*",
+    "wintersmith-nunjucks": "git+https://github.com/jbuck/wintersmith-nunjucks.git#master",
+    "browsernizr": "*"
+  },
+  "repository": "none"
+}

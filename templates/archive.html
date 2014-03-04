@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	{% set lineHeight = 2.2 %}
+	{% set vars = env.helpers.getArticles(contents)|configArchive(_) %}
+	{% set archives = vars.archives %}
+	{% set month_names = vars.month_names %}
+	<section class="archive">
+		<h2>Archive</h2>
+		<ul>
+			{% set yearsK = vars.yearsK %}
+			{% for year in yearsK %}
+				{% set months = archives[year] %}
+				{% set yearHeight = lineHeight * vars.yearHeights[year] %}
+				<li>
+					<span class="year-label" style="line-height:{{ yearHeight }}em;">
+						{{ year }}
+					</span>
+					<ul style="margin-left:4em;">
+						{% set monthsK = _.chain(months).keys().reverse().value() %}
+						{% for month in monthsK %}
+							{% set monthHeight = lineHeight * months[month].length %}
+							<li>
+								<span class="month-label" style="line-height:{{ monthHeight }}em;">
+									{{ month_names[month] }}
+								</span>
+								<ul style="margin-left:7em;">
+									{% for item in  months[month] %}
+										<li style="height:{{ lineHeight }}em;line-height:{{ lineHeight }}em;">
+											<a href="{{ item.url }}">{{ item.title }}</a>	
+										</li>
+									{% endfor %}
+								</ul>	
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<div class="nav">
+		<a href="{{ contents.index.url }}">« Full blog</a>
+	</div>
+{% endblock %}
